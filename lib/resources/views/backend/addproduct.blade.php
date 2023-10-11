@@ -7,10 +7,10 @@
 				<h1 class="page-header">Sản phẩm</h1>
 			</div>
 		</div><!--/.row-->
-		
+
 		<div class="row">
 			<div class="col-xs-12 col-md-12 col-lg-12">
-				
+
 				<div class="panel panel-primary">
 					<div class="panel-heading">Thêm sản phẩm</div>
 					<div class="panel-body">
@@ -47,13 +47,13 @@
 					                    </select>
 									</div>
 									<div class="form-group" >
-										<label>Hướng dẫn sử dụng</label>
-										<textarea class="ckeditor" required name="user_manual"></textarea>
-									</div>
-									<div class="form-group" >
-										<label>Miêu tả</label>
+                                        <label>Miêu tả</label>
 										<textarea class="ckeditor" required name="description"></textarea>
 									</div>
+                                    <div class="form-group" >
+                                        <label>Hướng dẫn sử dụng</label>
+                                        <textarea class="ckeditor" required name="user_manual"></textarea>
+                                    </div>
 									<div class="form-group" >
 										<label>Danh mục</label>
 										<select required name="cate" class="form-control">
