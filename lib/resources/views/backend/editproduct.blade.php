@@ -33,20 +33,12 @@
 					                    <img id="avatar" width="300px" src="{{ asset('lib/storage/app/avatar/'.$product->prod_img) }}">
 									</div>
 									<div class="form-group" >
-										<label>Phụ kiện</label>
-										<input required type="text" name="accessories" class="form-control" value="{{ $product->prod_accessories}}">
-									</div>
-									<div class="form-group" >
-										<label>Bảo hành</label>
-										<input required type="text" name="warranty" class="form-control" value="{{ $product->prod_warranty}}">
+										<label>Thương hiệu</label>
+										<input required type="text" name="trademark" class="form-control" value="{{ $product->prod_trademark}}">
 									</div>
 									<div class="form-group" >
 										<label>Khuyến mãi</label>
 										<input required type="text" name="promotion" class="form-control" value="{{ $product->prod_promotion}}">
-									</div>
-									<div class="form-group" >
-										<label>Tình trạng</label>
-										<input required type="text" name="condition" class="form-control" value="{{ $product->prod_condition}}">
 									</div>
 									<div class="form-group" >
 										<label>Trạng thái</label>
@@ -54,6 +46,10 @@
 											<option value="1" @if($product->prod_status == 1) selected  @endif>Còn hàng</option>
 											<option value="0" @if($product->prod_status == 0) selected  @endif>Hết hàng</option>
 					                    </select>
+									</div>
+									<div class="form-group" >
+										<label>Hướng dẫn sử dụng</label>
+										<textarea class="ckeditor" required name="user_manual">{{ $product->prod_user_manual}}</textarea>
 									</div>
 									<div class="form-group" >
 										<label>Miêu tả</label>

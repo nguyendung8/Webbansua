@@ -333,6 +333,7 @@ nav a#pull {
 
 .product-list{
 	margin: 0;
+	gap: 10px;
 }
 
 .product-item{

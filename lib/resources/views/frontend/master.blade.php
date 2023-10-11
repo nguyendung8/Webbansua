@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>ManhDung Shop - @yield('title')</title>
+	<title>Thế giới sữa - @yield('title')</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/home.css">
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -39,7 +39,7 @@
 			<div class="row">
 				<div id="logo" class="col-md-3 col-sm-12 col-xs-12">
 					<h1>
-						<a href="{{ asset('/') }}">MLDShop</a>						
+						<a style="text-decoration: none" href="{{ asset('/') }}">Thế giới sữa</a>						
 						<nav><a id="pull" class="btn btn-danger" href="#">
 							<i class="fa fa-bars"></i>
 						</a></nav>			
@@ -69,7 +69,7 @@
 						<ul>
 							<li class="menu-item">Danh mục sản phẩm</li>
 							@foreach($categories as $category)
-							<li class="menu-item"><a href="{{ asset('category/' . $category->cate_id) }}">{{ $category->cate_name }}</a></li>	
+							<li class="menu-item"><a style="text-decoration: none;" href="{{ asset('category/' . $category->cate_id) }}">{{ $category->cate_name }}</a></li>	
 							@endforeach				
 						</ul>
 						<!-- <a href="#" id="pull">Danh mục</a> -->
@@ -77,26 +77,32 @@
 
 					<div id="banner-l" class="text-center">
 						<div class="banner-l-item">
-							<a href="#"><img src="img/home/banner-l-1.png" alt="" class="img-thumbnail"></a>
+							<img src="img/home/qc1.jpg" alt="" class="img-thumbnail">
 						</div>
 						<div class="banner-l-item">
-							<a href="#"><img src="img/home/banner-l-2.png" alt="" class="img-thumbnail"></a>
+							<img src="img/home/qc2.jpg" alt="" class="img-thumbnail">
 						</div>
 						<div class="banner-l-item">
-							<a href="#"><img src="img/home/banner-l-3.png" alt="" class="img-thumbnail"></a>
+							<img src="img/home/qc3.jpg" alt="" class="img-thumbnail">
 						</div>
 						<div class="banner-l-item">
-							<a href="#"><img src="img/home/banner-l-4.png" alt="" class="img-thumbnail"></a>
+							<img src="img/home/qc4.jpg" alt="" class="img-thumbnail">
 						</div>
 						<div class="banner-l-item">
-							<a href="#"><img src="img/home/banner-l-5.png" alt="" class="img-thumbnail"></a>
+							<img src="img/home/qc5.jpg" alt="" class="img-thumbnail">
 						</div>
 						<div class="banner-l-item">
-							<a href="#"><img src="img/home/banner-l-6.png" alt="" class="img-thumbnail"></a>
+							<img src="img/home/slide2.jpg" alt="" class="img-thumbnail">
 						</div>
-						{{-- <div class="banner-l-item">
-							<a href="#"><img src="img/home/banner-l-7.png" alt="" class="img-thumbnail"></a>
-						</div> --}}
+						<div class="banner-l-item">
+							<img src="img/home/slide3.jpg" alt="" class="img-thumbnail">
+						</div>
+						<div class="banner-l-item">
+							<img src="img/home/slide4.jpg" alt="" class="img-thumbnail">
+						</div>
+						<div class="banner-l-item">
+							<img src="img/home/slide5.jpg" alt="" class="img-thumbnail">
+						</div>
 					</div>
 				</div>
 
@@ -116,13 +122,16 @@
 							<!-- The slideshow -->
 							<div class="carousel-inner">
 								<div class="carousel-item active">
-									<img src="img/home/slide-1.png" alt="Los Angeles" >
+									<img src="img/home/slide2.jpg" alt="Chicago">
 								</div>
 								<div class="carousel-item">
-									<img src="img/home/slide-2.png" alt="Chicago">
+									<img src="img/home/slide3.jpg" alt="New York" >
 								</div>
 								<div class="carousel-item">
-									<img src="img/home/slide-3.png" alt="New York" >
+									<img src="img/home/slide4.jpg" alt="New York" >
+								</div>
+								<div class="carousel-item">
+									<img src="img/home/slide5.jpg" alt="New York" >
 								</div>
 							</div>
 
@@ -139,10 +148,10 @@
 					<div id="banner-t" class="text-center">
 						<div class="row">
 							<div class="banner-t-item col-md-6 col-sm-12 col-xs-12">
-								<a href="#"><img src="img/home/banner-t-1.png" alt="" class="img-thumbnail"></a>
+								<img src="img/home/underslide1.jpg" alt="" class="img-thumbnail">
 							</div>
 							<div class="banner-t-item col-md-6 col-sm-12 col-xs-12">
-								<a href="#"><img src="img/home/banner-t-1.png" alt="" class="img-thumbnail"></a>
+								<img src="img/home/underslide2.jpg" alt="" class="img-thumbnail">
 							</div>
 						</div>					
 					</div>
@@ -161,22 +170,22 @@
                 <div class="container">
                     <div class="row">				
                         <div id="logo-f" class="col-md-3 col-sm-12 col-xs-12 text-center">						
-                            <a href="#"><img src="img/home/logo.png"></a>		
+                            <a style="text-decoration: none; font-size: 30px;" href="http://localhost/MLD-Shop/">Thế giới sữa</a>	
                         </div>
                         <div id="about" class="col-md-3 col-sm-12 col-xs-12">
-                            <h3>About us</h3>
-                            <p class="text-justify">MLDShop thành lập năm 2022. Chúng tôi là nhà cung cấp các sản phẩm công nghệ hàng đầu Việt Nam cũng như trên toàn thế giới.</p>
+                            <h3>Về chúng tôi</h3>
+                            <p class="text-justify">Thegioisua thành lập năm 2023. Chúng tôi là nhà cung cấp các sản phẩm về sữa hàng đầu Việt Nam cũng như trên toàn thế giới.</p>
                         </div>
                         <div id="hotline" class="col-md-3 col-sm-12 col-xs-12">
-                            <h3>Hotline</h3>
-                            <p>Phone1: (+84) 523629227</p>
-                            <p>Phone2: (+84) 983532154</p>
-                            <p>Email: dungli1221@gmail.com</p>
+                            <h3>Liên hệ</h3>
+                            <p>Phone1: (+84) 628332948</p>
+                            <p>Phone2: (+84) 973927635</p>
+                            <p>Email: thainguyen@gmail.com</p>
                         </div>
                         <div id="contact" class="col-md-3 col-sm-12 col-xs-12">
-                            <h3>Contact Us</h3>
-                            <p>Address 1: Số 51/42 - Ngõ 85 Hạ Đình - Thanh Xuân - Hà Nội</p>
-                            <p>Address 2: Số 24 Lương Ngọc Quyến - Hàng Buồm - Hoàn Kiếm - Hà Nội</p>
+                            <h3>Địa chỉ</h3>
+                            <p>Địa chỉ 1: Số 102 Phố Thái Thịnh - Đống Đa- Hà Nội</p>
+                            <p>Địa chỉ 2: Số 29 Phố Định Công - Hoàng Mai - Hà Nội</p>
                         </div>
                     </div>				
                 </div>

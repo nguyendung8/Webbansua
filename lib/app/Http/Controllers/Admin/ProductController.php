@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     public function getProduct()
     {
-        $product_list = DB::table('vp_products')->join('vp_categories','vp_products.prod_cate', '=', 'vp_categories.cate_id')->orderBy('prod_id','desc')->get();
+        $product_list = DB::table('vp_products')->join('vp_categories','vp_products.prod_cate', '=', 'vp_categories.cate_id')->orderBy('prod_id','asc')->get();
         return view('backend.product', compact('product_list'));
     }
 
@@ -33,12 +33,11 @@ class ProductController extends Controller
         $product->prod_name = $request->product_name;
         $product->prod_slug = Str::slug( $request->product_name);
         $product->prod_img = $filename;
-        $product->prod_accessories = $request->accessories;
         $product->prod_price = $request->price;
-        $product->prod_warranty = $request->warranty;
+        $product->prod_trademark = $request->trademark;
         $product->prod_promotion = $request->promotion;
-        $product->prod_condition = $request->condition;
         $product->prod_status = $request->status;
+        $product->prod_user_manual = $request->user_manual;
         $product->prod_description = $request->description;
         $product->prod_cate = $request->cate;
         $product->prod_featured = $request->featured;
@@ -61,12 +60,11 @@ class ProductController extends Controller
 
         $product->prod_name = $request->product_name;
         $product->prod_slug = Str::slug($request->product_name);
-        $product->prod_accessories = $request->accessories;
         $product->prod_price = $request->price;
-        $product->prod_warranty = $request->warranty;
+        $product->prod_trademark = $request->trademark;
         $product->prod_promotion = $request->promotion;
-        $product->prod_condition = $request->condition;
         $product->prod_status = $request->status;
+        $product->prod_user_manual = $request->user_manual;
         $product->prod_description = $request->description;
         $product->prod_cate = $request->cate;
         $product->prod_featured = $request->featured;

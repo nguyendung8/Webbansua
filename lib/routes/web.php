@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Admin\StatisticController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -88,5 +89,9 @@ Route::group(['namespace' => 'Admin'], function () {
             Route::get('/delete/{id}', [ProductController::class, 'getDeleteProduct']);
         });
 
+         //statistics
+         Route::group(['prefix' => 'statistic'], function (){
+            Route::get('/', [StatisticController::class, 'getStatistic'] );
+        });
     });
 });

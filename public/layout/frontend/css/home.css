@@ -137,6 +137,7 @@ padding-left: 12px;
 
 .product-list{
 	margin: 0;
+	gap: 10px;
 }
 
 .product-item{

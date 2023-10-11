@@ -12,11 +12,9 @@
 				</div>
 				<div id="product-details" class="col-xs-12 col-sm-12 col-md-9">
 					<p>Giá: <span class="price">{{ number_format($product->prod_price,0,',','.' )}} VND</span></p>
-					<p>Bảo hành: {{ $product->prod_warranty }}</p> 
-					<p>Phụ kiện: {{ $product->prod_accessories }}</p>
-					<p>Tình trạng: {{ $product->prod_condition }}</p>
 					<p>Khuyến mại: {{ $product->prod_promotion }}</p>
-					<p>Còn hàng: @if($product->prod_status == 1) Còn hàng @else Đã hết @endif</p>
+					<p>Thương hiệu: {{ $product->prod_trademark }}</p>
+					<p>Tình trạng: @if($product->prod_status == 1) Còn hàng @else Đã hết @endif</p>
 					<p class="add-cart text-center"><a href="{{ asset('cart/add/' . $product->prod_id) }}">Thêm vào giỏ hàng</a></p>
 				</div>
 			</div>							
@@ -24,6 +22,10 @@
 		<div id="product-detail">
 			<h3>Chi tiết sản phẩm</h3>
 			<p class="text-justify">{!! $product->prod_description !!}</p>
+		</div>
+		<div id="product-detail">
+			<h3>Hướng dẫn sử dụng</h3>
+			<p class="text-justify">{!! $product->prod_user_manual !!}</p>
 		</div>
 		<div id="comment">
 			<h3>Bình luận</h3>

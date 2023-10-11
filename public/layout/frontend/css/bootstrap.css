@@ -675,6 +675,7 @@ pre code {
 .row {
   display: -ms-flexbox;
   display: flex;
+  gap: 10px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-right: -15px;
