@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\StatisticController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //trang chủ
-Route::get('/', [FrontendController::class, 'getHome']);
+Route::group(['prefix' => '/homepage', 'middleware' => 'CheckLogedOut'], function (){
+    Route::get('', [FrontendController::class, 'getHome']);
+});
+
+//Đăng ký
+Route::get('/register', [RegisterController::class, 'getRegister']);
+Route::post('/register', [RegisterController::class, 'postRegister']);
 
 // lấy ra chi tiết sản phẩm và comment
 Route::get('/detail/{id}', [FrontendController::class, 'getDetail']);
@@ -49,17 +56,17 @@ Route::get('/complete', [CartController::class, 'getComplete']);
 // Admin
 Route::group(['namespace' => 'Admin'], function () {
     //login
-    Route::group(['prefix' => 'login', 'middleware' => 'CheckLogedIn'], function (){
-       Route::get('/', [LoginController::class, 'getLogin']);  
-       Route::post('/', [LoginController::class, 'postLogin']); 
+    Route::group(['prefix' => '/', 'middleware' => 'CheckLogedIn'], function (){
+       Route::get('/', [LoginController::class, 'getLogin']);
+       Route::post('/', [LoginController::class, 'postLogin']);
     });
-    
+
     //logout
-    Route::get('/logout', [HomeController::class, 'getLogout']);    
+    Route::get('/logout', [HomeController::class, 'getLogout']);
 
     //admin
     Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut'], function (){
-        
+
         //admin page
         Route::get('/home', [HomeController::class, 'getHome']);
 
