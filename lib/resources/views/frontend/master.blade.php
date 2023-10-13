@@ -57,7 +57,7 @@
                 </div>
 				<div id="logo" class="col-md-3 col-sm-12 col-xs-12">
 					<h1>
-						<a style="text-decoration: none" href="{{ asset('/') }}">Thế giới sữa</a>
+						<a style="text-decoration: none" href="{{ asset('/homepage') }}">Thế giới sữa</a>
 						<nav><a id="pull" class="btn btn-danger" href="#">
 							<i class="fa fa-bars"></i>
 						</a></nav>
@@ -188,7 +188,7 @@
                 <div class="container">
                     <div class="row">
                         <div id="logo-f" class="col-md-3 col-sm-12 col-xs-12 text-center">
-                            <a style="text-decoration: none; font-size: 30px;" href="{{ asset('/') }}">Thế giới sữa</a>
+                            <a style="text-decoration: none; font-size: 30px;" href="{{ asset('/homepage') }}">Thế giới sữa</a>
                         </div>
                         <div id="about" class="col-md-3 col-sm-12 col-xs-12">
                             <h3>Về chúng tôi</h3>
