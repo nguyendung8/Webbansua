@@ -44,6 +44,45 @@
             color: aliceblue;
             text-decoration: none;
         }
+        .subnav li {
+                color: black;
+                padding: 10px;
+                font-size: 17px;
+        	}
+
+			.user {
+				position: relative;
+				padding: 0 20px;
+			}
+			.icon {
+				font-size: 35px;
+				padding: 20px 27px;
+				color: white;
+				cursor: pointer;
+                margin-left: 7px;
+			}
+			.subnav li:hover {
+				background-color: rgba(184, 166, 146, 0.2);
+			}
+            .subnav a {
+                color: #ff7b07;
+            }
+
+			.user:hover .subnav {
+				display: block;
+			}
+
+			.user .subnav {
+				display: none;
+				top: 81px;
+				position: absolute;
+				list-style-type: none;
+				background-color: white;
+				box-shadow: 0 0 5px #333;
+				border-radius: 3px;
+				width: 175px;
+				z-index: 1;
+			}
     </style>
 </head>
 <body>
@@ -51,10 +90,6 @@
 	<header id="header">
 		<div class="container">
 			<div style="flex-wrap: unset !important;" class="row">
-                <div class="logout-btn">
-					<i class="fa fa-arrow-right"></i>
-                    <a href="{{ asset('logout') }}">Đăng xuất</a></li>
-                </div>
 				<div id="logo" class="col-md-3 col-sm-12 col-xs-12">
 					<h1>
 						<a style="text-decoration: none" href="{{ asset('/homepage') }}">Thế giới sữa</a>
@@ -69,10 +104,19 @@
 						<input type="submit" name="submit" value="Tìm Kiếm">
 					</form>
 				</div>
-				<div id="cart" class="col-md-2 col-sm-12 col-xs-12">
-					<a class="display" href="{{ asset('cart/show') }}">Giỏ hàng</a>
-					<a href="{{ asset('cart/show') }}">{{ Cart::count() }}</a>
-				</div>
+				<div class="cart icon">
+					<a style="color:white;margin-left:10px" class="display" href="{{ asset('cart/show') }}">
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					</a>
+					<a style="font-size: 18px; color:white" href="{{ asset('cart/show') }}">{{ Cart::count() }}</a>
+        		</div>
+                <div class="user icon">
+					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+					<ul class="subnav">
+                        <li><a href="{{ asset('change-info') }}">Đổi Email</a></li>
+                        <li><a href="{{ asset('logout') }}">Đăng xuất</a></li>
+					</ul>
+        		</div>
 			</div>
 		</div>
 	</header><!-- /header -->

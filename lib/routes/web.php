@@ -1,12 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\StatisticController;
+use App\Http\Controllers\ChangeInfoController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +31,13 @@ Route::group(['prefix' => '/homepage', 'middleware' => 'CheckLogedOut'], functio
 //Đăng ký
 Route::get('/register', [RegisterController::class, 'getRegister']);
 Route::post('/register', [RegisterController::class, 'postRegister']);
+
+// changeinfo
+Route::group(['prefix' => 'change-info','middleware' => 'CheckLogedOut'], function (){
+    Route::get('/', [ChangeInfoController::class, 'getChangeInfo']);
+    Route::post('/', [ChangeInfoController::class, 'updateInfo']);
+});
+
 
 // lấy ra chi tiết sản phẩm và comment
 Route::get('/detail/{id}', [FrontendController::class, 'getDetail']);
@@ -99,6 +109,19 @@ Route::group(['namespace' => 'Admin'], function () {
          //statistics
          Route::group(['prefix' => 'statistic'], function (){
             Route::get('/', [StatisticController::class, 'getStatistic'] );
+        });
+
+        //order
+        Route::group(['prefix' => 'order'], function (){
+            Route::get('/', [OrderController::class, 'getOrder']);
+            Route::get('/delete/{id}', [OrderController::class, 'getDeleteOrder']);
+            Route::get('/confirm/{id}', [OrderController::class, 'confirmOrder']);
+        });
+
+        //account
+        Route::group(['prefix' => 'account'], function (){
+            Route::get('/', [AccountController::class, 'getAccount']);
+            Route::get('/delete/{id}', [AccountController::class, 'getDeleteAccount']);
         });
     });
 });

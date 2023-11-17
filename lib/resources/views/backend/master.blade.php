@@ -34,10 +34,12 @@
 		<ul class="nav menu">
 			<li role="presentation" class="divider"></li>
 			<li class="home-btn"><a href="{{ asset('admin/home') }}"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Trang chủ</a></li>
+            <li class="account-btn"><a style="display: flex !important; align-items: center;" href="{{ asset('admin/account') }}"><i style="font-size: 17px; margin-right: 12px;" class="fa fa-users" aria-hidden="true"></i> Người dùng</a></li>
 			<li class="product-btn"><a href="{{ asset('admin/product') }}"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Sản phẩm</a></li>
 			<li class="category-btn"><a href="{{ asset('admin/category') }}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Danh mục</a></li>
 			<li class="statistical-btn"><a href="{{ asset('admin/statistic') }}"><span style="margin-right: 14px; margin-left: 3px;">T</span> Thống kê</a></li>
-			<li role="presentation" class="divider"></li>
+			<li class="order-btn"><a style="display: flex !important; align-items: center;" href="{{ asset('admin/order') }}"><i style="font-size: 18px; margin-right: 14px;" class="fa fa-cart-plus" aria-hidden="true"></i> Đơn hàng</a></li>
+            <li role="presentation" class="divider"></li>
 		</ul>
 
 	</div><!--/.sidebar-->

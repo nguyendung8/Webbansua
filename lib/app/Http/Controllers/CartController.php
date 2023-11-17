@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\VpOrder;
 use App\Models\VpProduct;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
@@ -42,6 +44,18 @@ class CartController extends Controller
     }
     public function postPayCart(Request $request)
     {
+        // add table order
+        $order = new VpOrder;
+        $order->name  = $request->name;
+        $order->address = $request->add;
+        $order->email = $request->email;
+        $order->phone = $request->phone;
+        $order->total_price = Cart::total();
+        $order->total_products = Cart::content()->pluck('name')->implode('; ');
+        $order->placed_order_date = now()->format('d/m/Y');
+        $order->user_id = Auth::id();
+        $order->save();
+
         $data['info'] = $request->all();
         $email = $request->email;
         $name = $request->name;
