@@ -13,7 +13,11 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Tổng doanh thu</div>
 					<div class="panel-body">
-                        {{ number_format($total_sold,0,',','.')}} VND
+                        @if($total_sold < 1000)
+                        {{ $total_sold}}.000 VND
+                        @else
+                        {{ number_format($total_sold,0,',','.')}}.000 VND
+                        @endif
 						<div class="clearfix"></div>
 					</div>
 				</div>
